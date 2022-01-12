@@ -1,11 +1,22 @@
 package powerpackage;
 
 public class PowerFinder {
-    public static int calculatePower(int number, int exponent) {
-        int power = 1;
-        for (int i = 0; i<exponent; i++) {
-            power *= number;
+
+    private int base;
+    private int exponent;
+    
+    public PowerFinder(int base, int exponent)
+    {
+        this.base = base;
+        this.exponent = exponent;
+    }
+    
+    public int calculatePower() {
+        int requiredPower = 1;
+        while(exponent!=0) {
+            requiredPower *= base;
+            exponent--;
         }
-        return power;
+        return requiredPower;
     }
 }
